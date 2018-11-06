@@ -1,0 +1,45 @@
+@mixin border($rad) {
+  border-radius: $rad;
+}
+
+
+@mixin font($size, $line, $color) {
+  font-size: $size;
+  line-height: $line;
+  color: $color;
+}
+
+@mixin btn($width, $height, $radius){
+  display: block;
+  text-align: center;
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid $colorRed;
+
+}
+
+@mixin dots {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: $color1;
+    margin-right: 10px;
+    cursor: pointer;
+    &:last-child {
+      margin-right: 0;
+    }
+    
+
+}
+
+@mixin flex ($justify-content){
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: $justify-content;
+}
+
+

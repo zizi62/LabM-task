@@ -1,0 +1,845 @@
+@import '_reset';
+@import '_grids';
+@import '_var';
+@import '_mixin';
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+header {
+    border-bottom: 2px solid $colorLiteGrey;
+}
+
+.header-top {
+    padding: 30px;
+    overflow: hidden;
+    @media (max-width: 810px) {
+        padding: 20px 10px;
+    }
+
+}
+.mob__btn,
+.header__logo,
+.header__nav,
+ {
+float: left;
+}
+
+.mob__btn {
+    padding-top: 5px;
+    margin-right: 10px;
+}
+.header__logo {
+    margin-right: 60px;
+    @media (max-width: 1050px) {
+        margin-right: 10px;
+    }
+    @media (max-width: 810px) {
+        width: 180px;
+    }
+}
+
+.mob__btn {
+    display: none; 
+    @media (max-width: 810px) {
+        display: block;
+    }
+}
+.mob__btn_item {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color:  $colorBlack;
+    margin-bottom: 7px;
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+
+.mob__nav {
+    @include font(14px, 1, $colorBlack);
+    text-align: center;
+    height: 0;
+    overflow: hidden;
+    transition: 0.6s;
+}
+.mob__nav_link{
+    display: block;
+    width: 100%;
+    height: 40px;  
+    @include font(14px, 1, $colorBlack);
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    &:hover{
+        color: $colorRed;
+        background-color: $colorRose;
+    }
+   
+}
+
+.header__nav{
+    width: 45%;
+    padding-top: 7px;
+    @media (max-width: 945px) {
+        width: 37%;
+    }
+}
+
+.header__nav_link {
+    border-bottom: 1px solid $colorBlack;
+    @include font(14px, 1, $colorBlack);
+    font-weight: bold;
+    display: inline-block;
+    margin: 0 20px 10px 0;
+   
+}
+
+.header__icons {
+    float: right;
+}
+
+.header__icons_item {
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+    &:last-child{
+        margin-right: 0;
+    }
+    @media (max-width: 810px) {
+        width: 18px;
+        margin-right: 5px;
+    }
+}
+
+.iconCounter {
+    position: absolute;
+}
+
+.iconCounter__alert {
+    width: 30px;
+    height: 20px;
+    background-color: $colorRed;
+    @include font(12px, 1, $colorWhite);
+    font-weight: bold;
+    border-radius: 3px;
+    text-align: center;
+    padding-top: 4px;
+    top: -22px;
+    right: -10px;
+}
+
+.iconCounter__visit{
+    @include font(12px, 1, $colorBlack);
+    font-weight: bold;
+    top: -14px;
+    right: 8px;
+}
+
+
+.main {
+    max-width: 1920px;
+    padding: 55px 0;
+}
+
+
+.track__link {
+    display: inline-block;
+    @include font(14px, 1, $colorLiteGrey);
+    border-bottom: 1px solid $colorLiteGrey;
+    margin-bottom: 10px;
+    
+}
+
+
+.mainContent {
+    width: 100%;
+    padding: 35px 0 0;
+}
+
+.textAria{
+    width: 53%;
+    float: left;
+    @media (max-width: 1630px) {
+        width: 100%;
+        float: none;
+    }
+}
+.textAria__title {
+    @include font(52px, 1.2, $colorBlack);
+    font-weight: 200;
+    @media (max-width: 810px){
+        font-size: 28px;
+    }
+}
+
+.textAria__item {
+    @include font(24px, 1.5, $colorBlack);
+    &:first-of-type{
+        margin: 35px 0;
+    } 
+    @media (max-width: 810px){
+        font-size: 18px;
+    }
+}
+
+
+.slider {
+    width: 620px;
+    height: 320px;
+    float: right;
+    margin-top: 125px;
+    position: relative;
+    
+    @media (max-width: 1630px) {
+        float: none;
+        margin-top: 20px;
+        width: auto;
+        max-width: 620px;
+    }
+
+}
+
+
+.slider__item {
+    max-width: 620px;
+    height: 320px;
+    opacity: 0;
+    padding: 30px 85px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.6s;
+
+    @media (max-width: 810px){
+        padding: 30px 20px;
+    }  
+}
+
+
+.cover{
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.slider__img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+
+.slider__item_title {
+    display: block;
+    @include font(24px, 1.5, $colorWhite);
+    text-decoration: underline;
+    position: relative;
+    margin-bottom: 10px;
+    z-index: 10;
+    @media (max-width: 810px){
+        font-size: 18px;
+    }
+}
+
+.slider__item_text {
+    @include font(18px, 1.5, $colorWhite);
+    position: relative;
+    z-index: 10;
+    @media (max-width: 810px){
+        font-size: 14px;
+    }
+}
+
+.slider__btn {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid $colorWhite;
+    font-size: 32px;
+    text-align: center;
+    padding-top: 4px;
+    color: $colorWhite;
+    z-index: 1000;
+    top: 50%;
+    margin-top: -22px;
+    cursor: pointer;
+    &:hover{
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    @media (max-width: 810px){
+        display: none;
+    }
+}
+
+.slider__btn_next{
+    right: 15px;
+}
+.slider__btn_prev{
+    left: 15px;
+}
+
+.sliderDots__box {
+    width: 46px;
+    position: absolute;
+    left: 50%;
+    bottom: 10px; 
+    margin-left: -23px;
+    z-index: 1000;
+}
+  
+.sliderDots__item {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: 0.8s; 
+    &:last-child {
+      margin-right: 0; 
+    }
+    
+}
+
+.circle {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    margin: 2px auto;
+    &:hover {
+        background-color: $colorWhite;
+    }
+
+}
+
+.sliderDots__item_active {
+    background-color: $colorWhite;
+}
+
+.tag {
+    max-width: 1920px;
+    padding: 60px 0;
+    @include font(12px, 1, $colorBlack);
+    @media (max-width: 810px){
+        border-bottom: 1px solid $colorLiteGrey;
+    }
+}
+.tagBox {
+    width: 60%;
+    
+    @media (max-width: 945px){
+        width: 100%;
+    }
+
+    
+}
+
+.tags {
+    margin-bottom: 30px;
+}
+.tags__link {
+    display: inline-block;
+    @include font(12px, 1, $colorLiteGrey);
+    padding: 10px;
+    border-radius: 5px;
+    background-color: $colorWhiteGrey;
+    margin: 7px 7px 7px 0;
+    &:hover{
+        color: $colorRed;
+    }
+}
+
+
+.classifications__title {
+    font-weight: bold;
+}
+.classifications__link {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    height: 15px;
+    color: $colorGrey;
+    border-bottom: 1px solid $colorGrey;
+}
+
+.competion {
+    padding: 25px 0;
+}
+.competion__title {
+    font-weight: bold;
+    line-height: 3;
+}
+
+.competions__link {
+    display: inline-block;
+    height: 15px;
+    color: $colorGrey;
+    border-bottom: 1px solid $colorGrey;
+    margin: 10px 10px 0 0;
+    @media (max-width: 810px){
+        white-space: pre-wrap;
+     }
+}
+
+.edit{
+    display: block;
+}
+
+.edit__img {
+    opacity: 0.5;
+    &:hover{
+        opacity: 1;
+    }
+}
+.edit__link,
+.edit__img {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.edit__link {
+    height: 15px;
+    @include font(14px, 1, $colorRed);
+    border-bottom: 1px dotted $colorRed;
+}
+.members{
+    max-width: 1920px;
+    padding: 30px 0 70px; 
+}
+
+.member__title{
+    @include font(40px, 1.5, $colorBlack);
+    margin-bottom: 35px;
+    @media (max-width: 810px){
+       font-size: 24px;
+       font-weight: bold;
+    }
+}
+
+.members__filter__link {
+    display: inline-block;
+    margin-right: 35px;
+    @include font(14px, 1.5, $colorRed);
+    border-bottom: 1px solid $colorRed;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 10px;
+    @media (max-width: 810px){
+        display: table;
+    }
+}
+.member-flex-block {
+    display: flex;
+}
+.box {
+    @media (max-width: 810px){
+        text-align: center;
+    } 
+}
+.member {
+    width: 292px;
+    margin: 35px;
+    display: inline-block;
+    vertical-align: top;
+    @media (max-width: 945px){
+        margin: 20px;
+    }  
+    @media (max-width: 810px){
+        width: 260px;
+        margin: 20px;
+        text-align: left;
+    }  
+}
+
+.member__noView-945{
+    @media (max-width: 945px){
+        display: none;
+    }
+}
+
+.member-flex-block{
+    display: flex;
+    position: relative;
+
+}
+.member__img{
+    width: 75px;
+    height: 75px; 
+    margin-right: 10px;
+    @media (max-width: 810px){
+        position: absolute; 
+        width: 40px;
+        height: 40px; 
+    }
+   
+}
+
+.member__img_empty {
+    border: 1px solid $colorGrey;
+    border-radius: 50%;
+    text-align: center;
+    @include font(14px, 1, $colorGrey);
+    font-weight: bold;
+    padding-top: 30px;
+    @media (max-width: 810px){
+        padding-top: 12px;
+    } 
+}
+
+
+
+.member__info{
+    width: 205px;
+    @media (max-width: 810px){
+        width: 260px; 
+    } 
+}
+
+
+.member__info_name{
+    @include font(14px, 1.5, $colorBlack);
+    display: inline;
+    border-bottom: 1px solid $colorLiteGrey;
+    font-weight: bold;
+    @media (max-width: 810px){
+        margin-left: 50px;
+        margin-bottom: 20px;
+        display: block;
+        border-bottom: none;
+    } 
+
+}
+.member__info_position,
+.member__info_degree,
+.member__info_active{
+    @include font(12px, 1.2, $colorBlack);
+}
+.member__info_position,
+.member__info_degree {
+    margin: 7px 0;
+}
+
+.member__info_active{
+    margin-bottom: 15px;
+}
+.member__info_expert,
+.member__info_trainer{
+    display: inline-block;
+    @include font(12px, 1.5, $colorRed);
+    border-bottom: 1px solid $colorRed;
+    margin-right: 10px;
+    margin-bottom: 6px;
+  
+}
+
+
+.member__btn_invite{
+    @include btn(186px, 30px, 25px);
+    padding-top: 8px;
+    @include font(14px, 1, $colorRed);
+    border: 1px solid $colorRed;
+    margin-top: 10px;
+    margin-left: -5px;
+    &:hover{
+        background-color: $colorRed;
+        color: $colorWhite;
+    }
+}
+
+.member__btn_question{
+    @include btn(132px, 30px, 25px);
+    padding-top: 8px;
+    @include font(14px, 1, $colorRed);
+    border: 1px solid $colorRed;
+    margin: 10px 0;
+    margin-left: -5px;
+    &:hover{
+        background-color: $colorRed;
+        color: $colorWhite;
+    }
+}
+
+.member__btn_white{
+    @include btn(195px, 48px, 25px);
+    padding-top: 14px;
+    @include font(18px, 1, $colorRed);
+    &:hover{
+        background-color: $colorRed;
+        color: $colorWhite;
+    }
+}
+
+.member__btn_red {
+    @include btn(225px, 48px, 25px);
+    padding-top: 14px;
+    background-color: $colorRed;
+    @include font(18px, 1, $colorWhite);
+    opacity: 1;
+    margin-bottom: 30px;
+    &:hover{
+        opacity: 0.6;
+        color: $colorWhite;
+    }
+}
+
+
+
+.courses {
+    width: 100%;
+}
+.courses__title {
+    @include font(40px, 1.5, $colorBlack);
+    @media (max-width: 810px){
+        font-size: 24px;
+        font-weight: bold;
+     }
+}
+.coursesBlok {
+    padding: 50px 0;
+}
+.coursesBox {
+    max-width: 780px;
+    position: relative;
+    padding: 30px;
+    box-shadow: 0px 2px 16px 1px rgba(0,0,0,0.45);
+    border-radius: 3px;
+    margin-bottom: 20px;
+    @media (max-width: 810px){
+        padding: 15px;
+     }
+}
+
+.coursesBox__star {
+    position: absolute;
+    top:0;
+    right: 0;
+}
+
+.star {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.coursesBox__top {
+    @include font(12px, 3, $colorGrey);
+}
+.coursesBox__text {
+    display: inline;
+    white-space: nowrap;
+    @include font(12px, 2, $colorGrey);
+    border-bottom: 1px solid $colorGrey;
+    margin: 10px 15px 0 0;
+    @media (max-width: 810px){
+        white-space: pre-line;
+     }
+}
+
+.coursesBox__title {
+    @include font(16px, 2, $colorBlack);
+    font-weight: bold;
+    border-bottom: 1px solid $colorGrey;
+
+    &:hover {
+        color: $colorRed;
+        border-bottom: 1px solid $colorRed;
+    }
+}
+
+
+.coursesBox__count_item {
+    display: inline-block;
+    @include font(14px, 1, $colorBlack);
+    font-weight: 600;
+    margin: 10px 20px 0 0;
+    @media (max-width: 810px){
+        display: block;
+    }
+}
+
+.heart {
+    display: inline-block;
+    margin-right: 5px;
+    
+}
+
+.courses__btn {
+    @include btn(200px, 48px, 25px);
+    @include font(18px, 1, $colorRed);
+    padding: 15px;
+    &:hover{
+        background-color: $colorRed;
+        color: $colorWhite;
+    }
+   
+}
+
+
+.applications {
+    width: 100%;
+    padding: 100px 0;
+}
+
+.applications__title {
+    @include font(40px, 1, $colorBlack);
+    margin-bottom: 50px;
+    @media (max-width: 810px){
+        font-size: 24px;
+        font-weight: bold;
+     }
+}
+
+.applications__btn{
+    display: inline-block;
+    margin:  0 10px 40px 0;
+    padding: 8px;
+    height: 30px;
+    border-radius: 4px;
+}
+.applications__btn_link {
+    @include font(14px, 1, $colorRed);
+   display: block;
+    height: 15px;
+    border-bottom: 1px dotted $colorRed;   
+}
+
+.applications__btn_active {
+    border: none;
+    background-color: $colorRose;
+}
+
+.table {
+    min-width: 765px;
+    table-layout: fixed; 
+    @include font(12px, 1.5, $colorBlack); 
+}
+.table__row_title {
+    color: $colorGrey;
+    border-bottom: 1px solid $colorGrey;
+    height: 25px;
+    
+}
+
+.table__col_title {
+    text-align: start;
+}
+.table__col {
+    width: 180px;
+    height: 80px;
+    text-align: start;
+    padding: 20px 10px 0 0;
+    
+}
+
+.table__row{
+    &:hover{
+        background-color: $colorRose;
+    }
+}
+
+.division {
+    width: 100px;
+}
+
+
+.pages{
+    padding: 30px 0 0 0;
+}
+.pages__item{
+    @include font(18px, 1, $colorRed);
+    margin-right: 20px;
+    &:hover{
+        color: $colorBlack;
+      
+    }
+    @media (max-width: 810px){
+        margin-right: 10px;
+    }
+}
+
+
+.scroll{
+  overflow: scroll;
+ 
+}
+
+
+.pages__dots{
+    color: $colorBlack;
+    margin-right: 20px;
+    font-weight: 700;
+}
+
+.footer {
+    max-width: 1920px;
+    @media (max-width: 810px){
+        border-top: 1px solid $colorLiteGrey;
+        opacity: 0.5;
+        
+    }
+}
+
+.footerBox {
+    width: 100%; 
+    
+}
+.footer__item {
+    width: calc(25% - 70px);
+    margin: 0 35px;
+    float: left;
+}
+.footer__item_title{
+    display: table;
+    @include font(18px, 1.5, $colorGrey);
+    border-bottom: 1px solid $colorGrey;
+    margin: 15px 0;
+
+}
+
+.footer__item_link {
+    display: table;
+    @include font(10px, 1.5, $colorGrey);
+    border-bottom: 1px solid $colorGrey;
+    margin-bottom: 10px;
+}
+
+.footer__copy {
+    margin: 35px;
+    @include font(12px, 1.5, $colorGrey);
+    @media (max-width: 810px){
+        margin: 20px;
+        
+    }
+}
+
+.displayNone-945 {
+    @media (max-width: 945px){
+        display: none;
+    }
+}
+
+.displayNone-810 {
+    @media (max-width: 810px){
+        display: none;
+    }
+}
+
+.opacity {
+    opacity: 1;
+}

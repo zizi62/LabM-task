@@ -1,0 +1,14 @@
+
+$colorRed: #fd5520;
+$colorWhite: #ffffff;
+$colorGrey: #666666;
+$colorBlack: #000000;
+$colorRose: #ffe6de;
+$colorLiteGrey: #b2b2b2;
+$colorWhiteGrey: #ececec;
+
+.clear-fix::after, .clear-fix::before {
+    content: "";
+    display: table;
+    clear: both;
+}
